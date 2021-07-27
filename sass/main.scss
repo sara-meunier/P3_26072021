@@ -1,0 +1,48 @@
+* {
+    box-sizing:border-box;
+    padding: 0;
+    margin:0;
+}
+body{
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+}
+.container{
+    max-width:1300px;
+    margin:auto;
+}
+ a, a:hover, a:visited, a:checked {
+    text-decoration : none;
+    color:black;
+}
+/*variables*/
+$background-color:#f6f6f6;
+$primary-color:#9356DC;
+$secondary-color:#ff79da;
+$tertiary-color:#99e2d0;
+
+/*header*/
+header {
+    padding : 15px;
+    text-align: center;
+}
+header img{
+    width:200px; 
+}
+
+#en-tete, #restaurant {
+    background-color: $background-color;
+}
+#en-tete{
+    padding: 30px;
+}
+#fonctionnement{
+    padding: 10px;
+    border: solid $primary-color;
+}
+
+footer{
+    background-color:#353535;
+    color:white;
+    padding: 10px;
+}
