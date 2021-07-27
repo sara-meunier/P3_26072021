@@ -23,6 +23,9 @@ body a, body a:hover, body a:visited, body a:checked {
 .shadow {
   box-shadow: 1px 5px 15px #e2e2e2;
 }
+.shadow--dark {
+  box-shadow: 1px 5px 15px #c8c8c8;
+}
 
 .arrondi {
   border-radius: 15px;
@@ -36,6 +39,11 @@ body a, body a:hover, body a:visited, body a:checked {
   color: white;
   background: linear-gradient(#ff79da, #9356DC);
   border-radius: 30px;
+}
+.button:hover {
+  cursor: pointer;
+  background: linear-gradient(#ff88de, #9b63df);
+  box-shadow: 1px 5px 10px #909090;
 }
 
 .button_nouveau {
