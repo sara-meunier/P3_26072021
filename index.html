@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Oh my food</title>
         <script src="https://kit.fontawesome.com/83bb751cf9.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;800&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;800&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=Shrikhand&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
@@ -15,55 +16,93 @@
         </header>
         <div class="container">
             <!-- entete-->
-            <section ID="en-tete">
-                <div id="localisation">
-                    <i class="fas fa-map-marker-alt noir"></i>
-                    <p>Paris, Belleville</p>
-                </div>
-                <div id="information">
+            <section id="localisation">
+                <i class="fas fa-map-marker-alt noir"></i>
+                <p>Paris, Belleville</p>
+            </section>
+
+            <section id="information">
                     <h1>Réservez le menu qui vous convient</h1>
                     <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
-                    <div class="buton">Explorer nos restaurants</div>
-                </div>
+                    <div class="button">Explorer nos restaurants</div>
             </section>
+
             <!-- fonctionnement-->
             <section id="fonctionnement">
                 <h2> Fonctionnement</h2>
-                <div class="etape">
-                    <div class="etape_number"></div>
-                    <i class="fas fa-mobile-alt"></i>
+                <div class="etape shadow">
+                    <div class="number"> <p>1</p> </div>
+                    <div class="picto"><i class="fas fa-mobile-alt"></i></div>
                     <p>Choisissez un restaurant</p>
                 </div>
-                <div class="etape">
-                    <div class="etape_number"></div>
-                    <i class="fas fa-ellipsis-v"></i>
-                    <i class="fas fa-bars"></i>
+                <div class="etape shadow">
+                    <div class="number"><p> 2 </p></div>
+                    <div class="picto"><i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-bars"></i></div>
                     <p>Composez votre menu</p>
                 </div>
-                <div class="etape">
-                    <div class="etape_number"></div>
-                    <i class="fas fa-store"></i>
+                <div class="etape shadow">
+                    <div class="number"><p>3</p></div>
+                    <div class="picto"><i class="fas fa-store"></i></div>
                     <p>Dégustez au restaurant</p>
                 </div>
 
             </section>
-            <section id="restaurant">
+            <!-- Restaurants-->
+            <section class="restaurant">
                 <h2>Restaurants</h2>
-                <div class="card_restaurant"></div>
-                <div class="card_restaurant"></div>
-                <div class="card_restaurant"></div>
-                <div class="card_restaurant"></div>
-
+                 <a href="" class="restaurant__card arrondi shadow">
+                    <img class="cover" src="images/restaurants/palette_gout.jpg" alt=""/>
+                    <div class="button_nouveau">Nouveau
+                    </div>
+                    <div class="description">
+                        <div class="description__texte">
+                        <h3>La palette du gout</h3>
+                        <p>Ménilmontant</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="restaurant__card arrondi shadow">
+                    <img class="cover cover__mid" src="images/restaurants/note_enchantee.jpg" alt=""/>
+                    <div class="button_nouveau">Nouveau</div>
+                    <div class="description">
+                        <div class="description__texte">
+                        <h3>La note enchantée</h3>
+                        <p>Charonne</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="restaurant__card arrondi shadow">
+                    <img class="cover cover__bottom" src="images/restaurants/a_la_francaise.jpg" alt=""/>
+                    <div class="description">
+                        <div class="description__texte">
+                        <h3>A la française</h3>
+                        <p>Cité rouge</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="restaurant__card arrondi shadow">
+                    <img class="cover cover__bottom" src="images/restaurants/delice_sens.jpg" alt=""/>
+                    <div class="description">
+                        <div class="description__texte">
+                        <h3>Le délice des sens</h3>
+                        <p>Folie-Méricourt</p>
+                        </div>
+                    </div>
+                </a>           
             </section>
         </div>
+
+
         <!-- footer-->
         <footer>
             <div class="container">
+                <h3>ohmyfood</h3>
                 <ul>
-                    <li><i class="fas fa-utensils"></i>   Proposez un restaurant</li>
-                    <li><i class="fas fa-hands-helping"></i>   Devenir partenaire</li>
-                    <li>Mentions légales</li>
-                    <li>contact</li>
+                    <li><i class="fas fa-utensils"></i>   <a href="">Proposez un restaurant</a></li>
+                    <li><i class="fas fa-hands-helping"></i>   <a href="">Devenir partenaire</a></li>
+                    <li><a href="">Mentions légales</a></li>
+                    <li><a href="mailto:">Contact</a></li>
                 </ul>
                 </div>
         </footer>
