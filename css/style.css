@@ -1,3 +1,6 @@
+@charset "UTF-8";
+/*variables*/
+/*valeurs de bases*/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -19,7 +22,7 @@ body a, body a:hover, body a:visited, body a:checked {
   margin: auto;
 }
 
-/*variables*/
+/* classes utilisées ailleurs*/
 .shadow {
   box-shadow: 1px 5px 15px #e2e2e2;
 }
@@ -32,9 +35,25 @@ body a, body a:hover, body a:visited, body a:checked {
   overflow: hidden;
 }
 
+.cover {
+  object-fit: cover;
+  object-position: center;
+}
+.cover__bottom {
+  object-position: center bottom;
+}
+.cover__mid {
+  object-position: center 60%;
+}
+
+/*boutons*/
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 180px;
   padding: 10px 0px 10px 0px;
+  margin: auto;
   font-size: 0.95em;
   color: white;
   background: linear-gradient(#ff79da, #9356DC);
@@ -58,17 +77,7 @@ body a, body a:hover, body a:visited, body a:checked {
   padding: 5px 8px 5px 8px;
 }
 
-.cover {
-  object-fit: cover;
-  object-position: center;
-}
-.cover__bottom {
-  object-position: center bottom;
-}
-.cover__mid {
-  object-position: center 60%;
-}
-
+/*titres et paragraphes*/
 h1 {
   padding-bottom: 15px;
 }
@@ -87,6 +96,7 @@ header img {
   width: 170px;
 }
 
+/*accueil : section 1*/
 #information, .restaurant {
   background-color: #f6f6f6;
 }
@@ -113,6 +123,7 @@ header img {
   padding-bottom: 15px;
 }
 
+/*accueil : section 2-fonctionnement*/
 #fonctionnement {
   padding: 30px 20px 20px 20px;
 }
@@ -149,6 +160,7 @@ header img {
   color: #9356DC;
 }
 
+/*accueil : section 3 - Liste des restaurants*/
 .restaurant {
   padding: 20px;
   display: flex;
@@ -169,6 +181,7 @@ header img {
   display: flex;
   padding: 10px;
 }
+/*footer*/
 footer {
   height: 190px;
   background-color: #353535;
@@ -192,6 +205,73 @@ footer h3 {
 footer .fas {
   padding-right: 5px;
   font-weight: 0.5em;
+}
+
+/* pages menu*/
+#illustration_menu {
+  width: 100%;
+  height: 250px;
+}
+#illustration_menu img {
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  margin-top: -20px;
+  z-index: 3;
+  position: relative;
+  padding: 20px 10px 20px 10px;
+}
+.menu__titre {
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+}
+.menu__card {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 15px;
+}
+.menu__card__description {
+  flex: 2;
+  padding: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__card__prix {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  font-weight: bold;
+}
+.menu__card__validation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  background-color: #99e2d0;
+  color: white;
+  font-size: 1.4em;
+}
+.menu h2 {
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 20px 0px 0px 0px;
+}
+.menu .button {
+  margin: 40px auto 40px auto;
+}
+
+.trait-vert {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #99e2d0;
+  margin-bottom: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

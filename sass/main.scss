@@ -1,3 +1,10 @@
+/*variables*/
+$background-color:#f6f6f6;
+$primary-color:#9356DC;
+$secondary-color:#ff79da;
+$tertiary-color:#99e2d0;
+
+/*valeurs de bases*/
 * {
     box-sizing:border-box;
     padding: 0;
@@ -17,31 +24,43 @@ body{
     margin:auto;
 }
 
-/*variables*/
-$background-color:#f6f6f6;
-$primary-color:#9356DC;
-$secondary-color:#ff79da;
-$tertiary-color:#99e2d0;
-
+/* classes utilisées ailleurs*/
 .shadow{
     box-shadow: 1px 5px 15px darken($background-color, 8%);
+
     &--dark{
         box-shadow: 1px 5px 15px darken($background-color, 18%);
     }
 }
-
 .arrondi {
     border-radius: 15px;
     overflow: hidden;
 }
+.cover{
+    object-fit :cover;
+    object-position:center;
 
+    &__bottom {
+        object-position: center bottom;
+    }
+
+    &__mid {
+        object-position: center 60%;
+    }
+}
+/*boutons*/
 .button{
+    display: flex;
+    justify-content:center;
+    align-items:center;
     width: 180px;
     padding: 10px 0px 10px 0px;
+    margin:auto;
     font-size:0.95em;
     color: white;
     background: linear-gradient($secondary-color,$primary-color);
     border-radius: 30px;
+
     &:hover{
         cursor:pointer;
         background:linear-gradient(lighten($secondary-color, 3%), lighten($primary-color,3%));
@@ -60,18 +79,7 @@ $tertiary-color:#99e2d0;
     padding:5px 8px 5px 8px;
 }
 
-
-
-.cover{
-    object-fit :cover;
-    object-position:center;
-    &__bottom {
-        object-position: center bottom;
-    }
-    &__mid {
-        object-position: center 60%;
-    }
-}
+/*titres et paragraphes*/
 
 h1{
     padding-bottom: 15px;
@@ -89,29 +97,34 @@ header img{
     width:170px; 
 }
 
+/*accueil : section 1*/
 #information, .restaurant {
     background-color: $background-color;
 }
-
 #localisation{
     display :flex;
     justify-content: center;
     font-weight:bold;
     background-color: darken($background-color,10%); 
     padding: 10px;
-    .fas {padding:0px 10px 0px 10px;}
-}
 
+    .fas {
+        padding:0px 10px 0px 10px;
+    }
+}
 #information{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding:40px;
-    p{ padding-bottom: 15px;
+
+    p{ 
+        padding-bottom: 15px;
     }
 }
 
+/*accueil : section 2-fonctionnement*/
 #fonctionnement{
     padding: 30px 20px 20px 20px;
     .etape{
@@ -150,7 +163,7 @@ header img{
         }
     }
 }
-
+/*accueil : section 3 - Liste des restaurants*/
 .restaurant{
     padding: 20px;
     display:flex;
@@ -170,13 +183,12 @@ header img{
     .description{
         display:flex;
         padding: 10px;
-        &__text {
-            
+        &__text {     
         }
     }
 }
 
-
+/*footer*/
 footer{
     height:190px;
     background-color:#353535;
@@ -199,6 +211,73 @@ footer{
     .fas{
         padding-right:5px;
         font-weight:0.5em;
-    }
-    
+    }   
 }
+
+/* pages menu*/
+
+#illustration_menu{
+    width:100%;
+    height:250px;
+    img{
+        width:100%;
+        height:100%;
+    }
+}
+.menu{
+    background-color: $background-color;
+    border-radius: 25px;
+    margin-top:-20px;
+    z-index: 3;
+    position:relative;
+    padding: 20px 10px 20px 10px;
+    &__titre{
+        font-family:'Shrikhand', cursive;
+        font-weight:normal;        
+    }
+    &__card{
+        display: flex;
+        justify-content:space-between;
+        background-color:white;
+        margin-bottom:15px;
+        &__description{
+            flex:2;
+            padding:10px;
+            text-overflow: ellipsis;
+            overflow:hidden;
+            white-space: nowrap;
+        }      
+        &__prix
+        {   display: flex;
+            align-items:flex-end;
+            padding:10px;
+            font-weight:bold;
+        }
+        &__validation{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            width:45px;
+            background-color: $tertiary-color;
+            color:white;
+            font-size:1.4em;
+        }  
+    }
+    h2{
+        text-transform: uppercase;
+        font-size: 1em;
+        padding:20px 0px 0px 0px;
+    }
+    .button{
+        margin:40px auto 40px auto;
+    }
+}
+.trait-vert{
+    display:block;
+    width:30px;
+    height:2px;
+    background-color:$tertiary-color;
+    margin-bottom:15px;
+}
+
+
