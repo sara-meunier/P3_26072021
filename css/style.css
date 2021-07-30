@@ -231,31 +231,54 @@ footer .fas {
 }
 .menu__card {
   display: flex;
+  position: relative;
   justify-content: space-between;
   background-color: white;
+  border: solid orange 1px;
   margin-bottom: 15px;
+}
+.menu__card__visible {
+  display: flex;
+  border: solid black 2px;
+  width: 100%;
+}
+.menu__card__visible:hover + .menu__card__validation {
+  transform: translateX(0px);
+  display: flex;
 }
 .menu__card__description {
   flex: 2;
+  border: solid green 1px;
   padding: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
+.menu__card__description:hover + .anime {
+  transform: translateX(-45px);
+}
 .menu__card__prix {
   display: flex;
+  border: solid pink 1px;
   align-items: flex-end;
   padding: 10px;
   font-weight: bold;
 }
+.menu__card__prix:hover + .menu__card__validation {
+  transform: translateX(0px);
+}
 .menu__card__validation {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 45px;
   background-color: #99e2d0;
   color: white;
   font-size: 1.4em;
+  transform: translateX(45px);
+  /*point de depart*/
+  transition: transform 1000ms;
+  /*animations!*/
 }
 .menu h2 {
   text-transform: uppercase;
