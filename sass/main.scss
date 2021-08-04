@@ -23,10 +23,12 @@ $anim_duration:1100ms;
     position: absolute;
     background-color:white;
     z-index:1;
-    &__animation{ animation: desapearing 3s;
-    animation-fill-mode: both;
+    &__animation{ 
+        animation: desapearing 3s;
+        animation-fill-mode: both;
     }
 }
+
 .loader{
     display:inline-block;
     width: 80px;
@@ -176,9 +178,6 @@ body{
 }
 
 
-
-
-
 /*titres et paragraphes*/
 
 h1{
@@ -283,17 +282,40 @@ nav i{
         margin-bottom:20px;
         position:relative;
     }
+
     img { 
         width:100%;
         height:74%;
     }
+
     .description{
         display:flex;
+        justify-content:space-between;
+        align-items: center;
         padding: 10px;
-        &__text {     
+        & .far{
+        display:inline;
+        }
+        & .fas{
+            display:none;
         }
     }
+    .favori:hover > .far{
+        display:none;
+    }
+    .favori:hover > .fas{
+        display: inline;
+    }
+    .gradient{
+        background: -webkit-linear-gradient($primary-color, $secondary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }    
 }
+
+
+
+
 
 /*footer*/
 footer{

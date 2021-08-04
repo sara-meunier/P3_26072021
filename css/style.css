@@ -275,8 +275,28 @@ nav i {
 }
 .restaurant .description {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
 }
+.restaurant .description .far {
+  display: inline;
+}
+.restaurant .description .fas {
+  display: none;
+}
+.restaurant .favori:hover > .far {
+  display: none;
+}
+.restaurant .favori:hover > .fas {
+  display: inline;
+}
+.restaurant .gradient {
+  background: -webkit-linear-gradient(#9356DC, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /*footer*/
 footer {
   height: 190px;
