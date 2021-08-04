@@ -74,10 +74,42 @@ body{
     font-weight:bold;
     text-align:center;
     position:absolute;
-    bottom: 80%;
-    left:75%;
+    top:20px;
+    right:10px;
     padding:5px 8px 5px 8px;
 }
+
+
+.label{
+    display: inline-block;
+    vertical-align:middle;
+    text-align:center;
+    height:45px;
+    width:40px;
+    margin:auto;
+    border-radius : 15px 0px 0px 15px; 
+}
+.input{
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    color:black;
+    background-color:transparent;
+    padding: 5px 0px 5px 10px;
+    margin: 0px;
+    border: none; 
+    &:focus{
+        /*border: solid 2px $primary-color;*/
+        background-color: white;
+        outline: none;
+    }
+    &::placeholder{
+        opacity:1;
+    }
+}
+
+
+
+
 
 /*titres et paragraphes*/
 
@@ -89,12 +121,19 @@ h2 {
 }
 
 /*header*/
-header {
-    padding : 15px;
+header, nav{
+    padding : 15px 15px 10px 15px;
     text-align: center;
 }
-header img{
+header img, nav img{
     width:170px; 
+}
+
+nav i{
+    position:absolute;
+    top:25px;
+    left:15px;
+
 }
 
 /*accueil : section 1*/
@@ -105,11 +144,11 @@ header img{
     display :flex;
     justify-content: center;
     font-weight:bold;
-    background-color: darken($background-color,10%); 
-    padding: 10px;
+    background-color: darken($background-color,10%);
+    padding:4px;
 
     .fas {
-        padding:0px 10px 0px 10px;
+        padding:5px 10px 0px 10px;
     }
 }
 #information{
@@ -237,54 +276,70 @@ footer{
     }
     &__card{
         display: flex;
+        min-width:0;
         position: relative;
         justify-content:space-between;
         background-color:white;
-        border: solid orange 1px;
         margin-bottom:15px;
+        i{
+            transform: translateX(15px) rotate(0deg) ;
+            transition: transform 1000ms;
+        }
+        &:hover  .menu__card__validation {
+           width:45px;
+           transition: width 400ms ease-in-out;
+        }
+        &:hover .menu__card__validation >i {
+            transition: transform 400ms ease-in-out;
+            transform: translateX(0px) rotate(360deg) ;
+        }
         
-       &__visible{ display:flex;
-            border: solid black 2px;
+       &__visible{ 
+            display:flex;
             width:100%;
-            &:hover + .menu__card__validation{ 
+            min-width:0;
+           /* &:hover + .menu__card__validation{ 
                 transform: translateX(0px);
-               display:flex;
-           }
+           }*/
         }
         
         &__description{
             flex:2;
-            border: solid green 1px;
+            min-width:0;
             padding:10px;
-            text-overflow: ellipsis;
-            overflow:hidden;
-            white-space: nowrap;
-            &:hover + .anime{
+            
+            p, h3{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow:hidden;
+            }
+            /*&:hover + .anime{
                 transform:translateX(-45px)
-            }    
+            }    */
         }  
 
         &__prix{  
             display: flex;
-            border: solid pink 1px;
             align-items:flex-end;
             padding:10px;
             font-weight:bold;
-            &:hover + .menu__card__validation{ 
+           /* &:hover + .menu__card__validation{ 
                 transform: translateX(0px)
-            } 
+            } */
         }
 
         &__validation{
-           display:none;
+            display: flex;
             justify-content:center;
             align-items:center;
-            width:45px;
+           /* width:45px;*/
+           width:0px;
             background-color: $tertiary-color;
             color:white;
             font-size:1.4em;
-            transform: translateX(45px);  /*point de depart*/
-            transition: transform 1000ms;
+            transition: width 1000ms;
+           /* transform: translateX(45px);  /*point de depart
+            transition: transform 1000ms;*/
             /*animations!*/  
         }  
     }
@@ -299,7 +354,6 @@ footer{
     }
 }
 .trait-vert{
-    display:block;
     width:30px;
     height:2px;
     background-color:$tertiary-color;
