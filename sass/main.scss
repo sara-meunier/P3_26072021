@@ -303,12 +303,16 @@ nav i{
         padding: 10px;
         .favori {
             position:relative;
-            font-size: 1.5em;
+            font-size: 1.6em;
+            width:30px;
+            height:30px;
         }
         & .far{
             display:inline;
             opacity:1;
-            position:absolute; 
+            position:absolute;
+            right:5px;
+            bottom:5px;
             animation: heart_aper reverse 300ms;
             animation-fill-mode: forwards;
             animation-play-state: paused;  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
@@ -316,9 +320,11 @@ nav i{
         
         & .fas{
             display:inline;
-            font-weight:bold;
             opacity:0;
-            z-index:2;
+            position:absolute;
+            right:5px;
+            bottom:5px;
+            font-weight:bold;
             animation: heart_aper 300ms;
             animation-fill-mode: forwards;
             animation-play-state: paused;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/

@@ -295,12 +295,16 @@ nav i {
 }
 .restaurant .description .favori {
   position: relative;
-  font-size: 1.5em;
+  font-size: 1.6em;
+  width: 30px;
+  height: 30px;
 }
 .restaurant .description .far {
   display: inline;
   opacity: 1;
   position: absolute;
+  right: 5px;
+  bottom: 5px;
   animation: heart_aper reverse 300ms;
   animation-fill-mode: forwards;
   animation-play-state: paused;
@@ -308,9 +312,11 @@ nav i {
 }
 .restaurant .description .fas {
   display: inline;
-  font-weight: bold;
   opacity: 0;
-  z-index: 2;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-weight: bold;
   animation: heart_aper 300ms;
   animation-fill-mode: forwards;
   animation-play-state: paused;
