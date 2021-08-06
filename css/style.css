@@ -37,7 +37,7 @@
 /*animations*/
 @keyframes slide-in {
   0% {
-    transform: translateY(200px);
+    transform: translateY(20px);
     opacity: 0;
   }
   100% {
@@ -293,13 +293,14 @@ nav i {
   align-items: center;
   padding: 10px;
 }
-.restaurant .description .favori {
+
+.favori {
   position: relative;
   font-size: 1.6em;
   width: 30px;
   height: 30px;
 }
-.restaurant .description .far {
+.favori .far {
   display: inline;
   opacity: 1;
   position: absolute;
@@ -310,7 +311,7 @@ nav i {
   animation-play-state: paused;
   /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
 }
-.restaurant .description .fas {
+.favori .fas {
   display: inline;
   opacity: 0;
   position: absolute;
@@ -322,11 +323,13 @@ nav i {
   animation-play-state: paused;
   /*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
 }
-.restaurant .favori:hover > .fas {
+
+.favori:hover  .fas {
   animation-play-state: running;
   /*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
 }
-.restaurant .favori:hover > .far {
+
+.favori:hover  .far {
   /* change le contour noir du coeur par le dégradé
   background: -webkit-linear-gradient($primary-color, $secondary-color);
   background-clip: border-box;
@@ -335,7 +338,8 @@ nav i {
   opacity:1;*/
   animation-play-state: running;
 }
-.restaurant .gradient {
+
+.gradient {
   background: -webkit-linear-gradient(#9356DC, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -387,8 +391,11 @@ footer .fas {
   padding: 20px 10px 20px 10px;
 }
 .menu__titre {
+  display: flex;
+  justify-content: space-between;
   font-family: "Shrikhand", cursive;
   font-weight: normal;
+  position: relative;
 }
 .menu__card {
   display: flex;

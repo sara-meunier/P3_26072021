@@ -43,7 +43,7 @@ $anim_duration:1100ms;
 
 @keyframes slide-in {
     0%{ 
-        transform: translateY(200px);
+        transform: translateY(20px);
         opacity:0;
     }
     100%{ 
@@ -301,54 +301,57 @@ nav i{
         justify-content:space-between;
         align-items: center;
         padding: 10px;
-        .favori {
-            position:relative;
-            font-size: 1.6em;
-            width:30px;
-            height:30px;
-        }
-        & .far{
-            display:inline;
-            opacity:1;
-            position:absolute;
-            right:5px;
-            bottom:5px;
-            animation: heart_aper reverse 300ms;
-            animation-fill-mode: forwards;
-            animation-play-state: paused;  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
-        }      
-        
-        & .fas{
-            display:inline;
-            opacity:0;
-            position:absolute;
-            right:5px;
-            bottom:5px;
-            font-weight:bold;
-            animation: heart_aper 300ms;
-            animation-fill-mode: forwards;
-            animation-play-state: paused;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
-        }
-    }
-
-    .favori:hover > .fas{
-        animation-play-state: running ;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/     
-    }
-    .favori:hover >.far{/* change le contour noir du coeur par le dégradé
-                background: -webkit-linear-gradient($primary-color, $secondary-color);
-                background-clip: border-box;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                opacity:1;*/
-                animation-play-state: running ;
-    }
-    .gradient{
-        background: -webkit-linear-gradient($primary-color, $secondary-color);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }    
+   
 }
 
+
+}
+.favori {
+    position:relative;
+    font-size: 1.6em;
+    width:30px;
+    height:30px;
+    & .far{
+        display:inline;
+        opacity:1;
+        position:absolute;
+        right:5px;
+        bottom:5px;
+        animation: heart_aper reverse 300ms;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
+    }      
+    
+    & .fas{
+        display:inline;
+        opacity:0;
+        position:absolute;
+        right:5px;
+        bottom:5px;
+        font-weight:bold;
+        animation: heart_aper 300ms;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
+    }
+}
+
+
+.favori:hover > .fas{
+animation-play-state: running ;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/     
+}
+.favori:hover >.far{/* change le contour noir du coeur par le dégradé
+        background: -webkit-linear-gradient($primary-color, $secondary-color);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity:1;*/
+        animation-play-state: running ;
+}
+.gradient{
+background: -webkit-linear-gradient($primary-color, $secondary-color);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+} 
 /*footer*/
 footer{
     height:190px;
@@ -394,8 +397,11 @@ footer{
     position:relative;
     padding: 20px 10px 20px 10px;
     &__titre{
+        display: flex;
+        justify-content:space-between;
         font-family:'Shrikhand', cursive;
-        font-weight:normal;        
+        font-weight:normal; 
+        position:relative;       
     }
     &__card{
         display: flex;
