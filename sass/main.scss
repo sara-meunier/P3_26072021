@@ -20,15 +20,14 @@ $anim_duration:1100ms;
     display:flex;
    justify-content:center;
    align-items:center;
-    position: absolute;
+    position: fixed;
     background-color:white;
     z-index:1;
     &__animation{ 
-        animation: desapearing 3s;
+        animation: desapearing 2s;
         animation-fill-mode: both;
     }
 }
-
 .loader{
     display:inline-block;
     width: 80px;
@@ -52,7 +51,6 @@ $anim_duration:1100ms;
         opacity:1;
     }
 }
-
 @keyframes rotation {
     0%{
         transform: rotate(0deg);
@@ -61,7 +59,6 @@ $anim_duration:1100ms;
         transform: rotate(360deg);
     }
 }
-
 @keyframes desapearing{
     0%{
         opacity:100%;
@@ -78,7 +75,14 @@ $anim_duration:1100ms;
         height:0;
     }
 }
-
+@keyframes heart_aper{
+    0%{ 
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
 
 body{
     font-size: 14px;
@@ -191,11 +195,11 @@ h2 {
 header, nav{
     padding : 15px 15px 10px 15px;
     text-align: center;
+    position: relative;
 }
 header img, nav img{
     width:170px; 
 }
-
 nav i{
     position:absolute;
     top:25px;
@@ -243,8 +247,11 @@ nav i{
         margin-bottom:15px;
 
         &:hover{
-            background-color: lighten($primary-color,32%)
+            background-color: lighten($primary-color,32%);
 
+        }
+        &:hover .picto .fas {
+            color:$primary-color;
         }
         .number {
            display:flex;
@@ -263,7 +270,7 @@ nav i{
             .fas {
                 margin:0px;
                 padding:0px;
-                color:$primary-color;
+                color: darken($background-color, 40%);
             }
 
         }
@@ -272,9 +279,10 @@ nav i{
 /*accueil : section 3 - Liste des restaurants*/
 .restaurant{
     padding: 20px;
-    display:flex;
-    flex-direction:column;
-
+    .gallerie{
+        display:flex;
+        flex-direction:column;
+    }
     &__card{
         width:100%;
         height:230px;
@@ -293,18 +301,40 @@ nav i{
         justify-content:space-between;
         align-items: center;
         padding: 10px;
+        .favori {
+            position:relative;
+            font-size: 1.5em;
+        }
         & .far{
-        display:inline;
-        }
+            display:inline;
+            opacity:1;
+            position:absolute; 
+            animation: heart_aper reverse 300ms;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
+        }      
+        
         & .fas{
-            display:none;
+            display:inline;
+            font-weight:bold;
+            opacity:0;
+            z-index:2;
+            animation: heart_aper 300ms;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
         }
     }
-    .favori:hover > .far{
-        display:none;
-    }
+
     .favori:hover > .fas{
-        display: inline;
+        animation-play-state: running ;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/     
+    }
+    .favori:hover >.far{/* change le contour noir du coeur par le dégradé
+                background: -webkit-linear-gradient($primary-color, $secondary-color);
+                background-clip: border-box;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                opacity:1;*/
+                animation-play-state: running ;
     }
     .gradient{
         background: -webkit-linear-gradient($primary-color, $secondary-color);
@@ -312,10 +342,6 @@ nav i{
         -webkit-text-fill-color: transparent;
     }    
 }
-
-
-
-
 
 /*footer*/
 footer{
@@ -339,12 +365,12 @@ footer{
     }
     .fas{
         padding-right:5px;
-        font-weight:0.5em;
+        font-size: 0.9em;
+        width:19px;
     }   
 }
 
 /* pages menu*/
-
 
 #illustration_menu{
     width:100%;
@@ -381,12 +407,10 @@ footer{
         &__animation2{
             animation:slide-in $anim_duration $delay*2 ease-in-out;
             animation-fill-mode: backwards;
-
         }
         &__animation3{
             animation:slide-in $anim_duration $delay*3 ease-in-out;
             animation-fill-mode: backwards;
-
         }
         i{
             transform: translateX(15px) rotate(0deg) ;
@@ -467,4 +491,39 @@ footer{
     margin-bottom:15px;
 }
 
+/*------------ régles pour les grands écrans ------------*/
 
+@media screen and (min-width:750px)
+{
+/*.version__desktop{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    .entete{
+        width:45%;
+        padding: 30px 0px 20px 0px;
+    }
+    #fonctionnement{
+        width:45%;
+        padding-right:0px;
+    }
+}*/
+
+    #fonctionnement .liste {
+        display: flex;
+        justify-content: space-around;
+            .etape {
+            width: 30%;
+            }
+    }
+    .restaurant {
+        .gallerie{
+            flex-direction:row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        &__card {
+            width:45%;
+        }
+    }
+}

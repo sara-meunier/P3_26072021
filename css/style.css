@@ -14,12 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   background-color: white;
   z-index: 1;
 }
 .blank__animation {
-  animation: desapearing 3s;
+  animation: desapearing 2s;
   animation-fill-mode: both;
 }
 
@@ -67,6 +67,14 @@
   100% {
     opacity: 0%;
     height: 0;
+  }
+}
+@keyframes heart_aper {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 body {
@@ -180,6 +188,7 @@ h2 {
 header, nav {
   padding: 15px 15px 10px 15px;
   text-align: center;
+  position: relative;
 }
 
 header img, nav img {
@@ -235,6 +244,9 @@ nav i {
 #fonctionnement .etape:hover {
   background-color: #e9ddf8;
 }
+#fonctionnement .etape:hover .picto .fas {
+  color: #9356DC;
+}
 #fonctionnement .etape .number {
   display: flex;
   justify-content: center;
@@ -253,12 +265,14 @@ nav i {
 #fonctionnement .etape .picto .fas {
   margin: 0px;
   padding: 0px;
-  color: #9356DC;
+  color: #909090;
 }
 
 /*accueil : section 3 - Liste des restaurants*/
 .restaurant {
   padding: 20px;
+}
+.restaurant .gallerie {
   display: flex;
   flex-direction: column;
 }
@@ -279,17 +293,41 @@ nav i {
   align-items: center;
   padding: 10px;
 }
+.restaurant .description .favori {
+  position: relative;
+  font-size: 1.5em;
+}
 .restaurant .description .far {
   display: inline;
+  opacity: 1;
+  position: absolute;
+  animation: heart_aper reverse 300ms;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
 }
 .restaurant .description .fas {
-  display: none;
-}
-.restaurant .favori:hover > .far {
-  display: none;
+  display: inline;
+  font-weight: bold;
+  opacity: 0;
+  z-index: 2;
+  animation: heart_aper 300ms;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  /*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
 }
 .restaurant .favori:hover > .fas {
-  display: inline;
+  animation-play-state: running;
+  /*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
+}
+.restaurant .favori:hover > .far {
+  /* change le contour noir du coeur par le dégradé
+  background: -webkit-linear-gradient($primary-color, $secondary-color);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity:1;*/
+  animation-play-state: running;
 }
 .restaurant .gradient {
   background: -webkit-linear-gradient(#9356DC, #ff79da);
@@ -320,7 +358,8 @@ footer h3 {
 }
 footer .fas {
   padding-right: 5px;
-  font-weight: 0.5em;
+  font-size: 0.9em;
+  width: 19px;
 }
 
 /* pages menu*/
@@ -436,6 +475,39 @@ footer .fas {
   height: 2px;
   background-color: #99e2d0;
   margin-bottom: 15px;
+}
+
+/*------------ régles pour les grands écrans ------------*/
+@media screen and (min-width: 750px) {
+  /*.version__desktop{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      .entete{
+          width:45%;
+          padding: 30px 0px 20px 0px;
+      }
+      #fonctionnement{
+          width:45%;
+          padding-right:0px;
+      }
+  }*/
+  #fonctionnement .liste {
+    display: flex;
+    justify-content: space-around;
+  }
+  #fonctionnement .liste .etape {
+    width: 30%;
+  }
+
+  .restaurant .gallerie {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .restaurant__card {
+    width: 45%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

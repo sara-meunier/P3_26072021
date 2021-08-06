@@ -11,18 +11,20 @@
     </head>
     <body>
 
-        <!---------loading------------>
+        <!----loading------------>
 
-<!---<div class="blank blank__animation">
+<div class="blank blank__animation">
     <div class="loader"></div>
-</div>--->
+</div>
 
 <!------------- header------------>
         <header>
-            <img src="images/logo/ohmyfood.png"/>
+            <img src="images/logo/ohmyfood.png" alt="logo Oh my food"/>
         </header>
         <div class="container">
 <!------------ entete------------>
+<div class="version__desktop">
+<div class="entete">
             <section id="localisation">
                 <i class="fas fa-map-marker-alt noir"></i>
                 <form method="post" action="traitement.php">
@@ -32,18 +34,18 @@
                     </form>
             </section>
 
-            
-
             <section id="information">
                     <h1>Réservez le menu qui vous convient</h1>
                     <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
                     <div class="button shadow--dark">Explorer nos restaurants</div>
             </section>
+</div>
 
 <!------------ fonctionnement------------>
             <section id="fonctionnement">
                 <h2> Fonctionnement</h2>
-                <div class="etape shadow">
+                <div class="liste">
+                    <div class="etape shadow">
                     <div class="number"> <p>1</p> </div>
                     <div class="picto"><i class="fas fa-mobile-alt"></i></div>
                     <p>Choisissez un restaurant</p>
@@ -58,55 +60,74 @@
                     <div class="picto"><i class="fas fa-store"></i></div>
                     <p>Dégustez au restaurant</p>
                 </div>
+                </div>
 
             </section>
+</div>
 <!------------ Restaurants------------>
             <section class="restaurant">
                 <h2>Restaurants</h2>
-                 <a href="" class="restaurant__card arrondi shadow">
-                    <img class="cover" src="images/restaurants/palette_gout.jpg" alt=""/>
-                    <div class="button_nouveau">Nouveau
-                    </div>
-                    <div class="description">
-                        <div class="description__texte">
-                        <h3>La palette du gout</h3>
-                        <p>Ménilmontant</p>
+                <div class="gallerie">
+                    <!--- card restaurant --->
+                    <a href="" class="restaurant__card arrondi shadow">
+                        <img class="cover" src="images/restaurants/palette_gout.jpg" alt=""/>
+                        <div class="button_nouveau">Nouveau
                         </div>
-                        <div class="favori">
-                            <i class="far fa-heart"></i>
-                            <i class="fas fa-heart gradient"></i>
+                        <div class="description">
+                            <div class="description__texte">
+                            <h3>La palette du gout</h3>
+                            <p>Ménilmontant</p>
+                            </div>
+                            <div class="favori">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart gradient"></i>
+                            </div>
+                        </div>   
+                    </a>
+                    <!--- card restaurant --->
+                    <a href="" class="restaurant__card arrondi shadow">
+                        <img class="cover cover__mid" src="images/restaurants/note_enchantee.jpg" alt=""/>
+                        <div class="button_nouveau">Nouveau</div>
+                        <div class="description">
+                            <div class="description__texte">
+                            <h3>La note enchantée</h3>
+                            <p>Charonne</p>
+                            </div>
+                            <div class="favori">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart gradient"></i>
+                            </div>
                         </div>
-                    </div>
-                    
-                </a>
-                <a href="" class="restaurant__card arrondi shadow">
-                    <img class="cover cover__mid" src="images/restaurants/note_enchantee.jpg" alt=""/>
-                    <div class="button_nouveau">Nouveau</div>
-                    <div class="description">
-                        <div class="description__texte">
-                        <h3>La note enchantée</h3>
-                        <p>Charonne</p>
+                    </a>
+                    <!--- card restaurant --->
+                    <a href="a_la_francaise.html" class="restaurant__card arrondi shadow">
+                        <img class="cover cover__bottom" src="images/restaurants/a_la_francaise.jpg" alt=""/>
+                        <div class="description">
+                            <div class="description__texte">
+                            <h3>A la française</h3>
+                            <p>Cité rouge</p>
+                            </div>
+                            <div class="favori">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart gradient"></i>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="a_la_francaise.html" class="restaurant__card arrondi shadow">
-                    <img class="cover cover__bottom" src="images/restaurants/a_la_francaise.jpg" alt=""/>
-                    <div class="description">
-                        <div class="description__texte">
-                        <h3>A la française</h3>
-                        <p>Cité rouge</p>
+                    </a>
+                    <!--- card restaurant --->
+                    <a href="" class="restaurant__card arrondi shadow">
+                        <img class="cover cover__bottom" src="images/restaurants/delice_sens.jpg" alt=""/>
+                        <div class="description">
+                            <div class="description__texte">
+                            <h3>Le délice des sens</h3>
+                            <p>Folie-Méricourt</p>
+                            </div>
+                            <div class="favori">
+                                <i class="far fa-heart"></i>
+                                <i class="fas fa-heart gradient"></i>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="" class="restaurant__card arrondi shadow">
-                    <img class="cover cover__bottom" src="images/restaurants/delice_sens.jpg" alt=""/>
-                    <div class="description">
-                        <div class="description__texte">
-                        <h3>Le délice des sens</h3>
-                        <p>Folie-Méricourt</p>
-                        </div>
-                    </div>
-                </a>           
+                    </a>
+                </div>        
             </section>
         </div>
 
