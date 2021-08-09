@@ -1,10 +1,5 @@
-/*variables*/
-$background-color:#f6f6f6;
-$primary-color:#9356DC;
-$secondary-color:#ff79da;
-$tertiary-color:#99e2d0;
-$delay:0.5s;
-$anim_duration:1100ms;
+@import "./utils/variables";
+
 
 /*valeurs de bases*/
 * {
@@ -15,11 +10,11 @@ $anim_duration:1100ms;
 
 /*loader*/
 .blank{
+    display:flex;
     width: 100%;
     height:100%;
-    display:flex;
-   justify-content:center;
-   align-items:center;
+    justify-content:center;
+    align-items:center;
     position: fixed;
     background-color:white;
     z-index:1;
@@ -35,8 +30,8 @@ $anim_duration:1100ms;
     border: solid 7px lighten($primary-color,30%);
     border-top: solid 7px $primary-color;
     border-radius: 50%;
-    animation: rotation linear 5 1s;
     z-index:2;
+    animation: rotation linear 5 1s;   
 }
 
 /*animations*/
@@ -91,10 +86,9 @@ body{
         text-decoration : none;
         color:black;
     }
-    /*font-family: 'Shrikhand', cursive;*/
 }
 .container{
-    max-width:1300px;
+    max-width:1100px;
     margin:auto;
 }
 
@@ -125,15 +119,18 @@ body{
 /*boutons*/
 .button{
     display: flex;
+    width: 180px;
     justify-content:center;
     align-items:center;
-    width: 180px;
-    padding: 10px 0px 10px 0px;
-    margin:auto;
     font-size:0.95em;
     color: white;
     background: linear-gradient($secondary-color,$primary-color);
+    padding: 15px 0px 15px 0px;
+    margin:auto;
     border-radius: 30px;
+    &__commander{
+        width: 140px;
+    }
 
     &:hover{
         cursor:pointer;
@@ -141,25 +138,25 @@ body{
         box-shadow:1px 5px 10px darken($background-color, 40%);
     }
 }
+
 .button_nouveau{
-    background-color:$tertiary-color;
-    color:darken($tertiary-color,40%);
+    text-align:center;
     font-size:0.8em;
     font-weight:bold;
-    text-align:center;
+    color:darken($tertiary-color,40%);
+    background-color:$tertiary-color;   
     position:absolute;
     top:20px;
     right:10px;
     padding:5px 8px 5px 8px;
 }
 
-
 .label{
     display: inline-block;
-    vertical-align:middle;
-    text-align:center;
     height:45px;
     width:40px;
+    vertical-align:middle;
+    text-align:center;
     margin:auto;
     border-radius : 15px 0px 0px 15px; 
 }
@@ -172,7 +169,6 @@ body{
     margin: 0px;
     border: none; 
     &:focus{
-        /*border: solid 2px $primary-color;*/
         background-color: white;
         outline: none;
     }
@@ -181,30 +177,26 @@ body{
     }
 }
 
-
 /*titres et paragraphes*/
 
-h1{
-    padding-bottom: 15px;
-}
-h2 {
+h1, h2{
     padding-bottom: 15px;
 }
 
 /*header*/
 header, nav{
-    padding : 15px 15px 10px 15px;
     text-align: center;
+    padding : 15px 15px 10px 15px;
     position: relative;
 }
 header img, nav img{
     width:170px; 
 }
 nav i{
+    font-size:1.5em;
     position:absolute;
-    top:25px;
+    top:20px;
     left:15px;
-
 }
 
 /*accueil : section 1*/
@@ -212,7 +204,7 @@ nav i{
     background-color: $background-color;
 }
 #localisation{
-    display :flex;
+    display:flex;
     justify-content: center;
     font-weight:bold;
     background-color: darken($background-color,10%);
@@ -239,28 +231,27 @@ nav i{
     padding: 30px 20px 20px 20px;
     .etape{
         display: flex;
-        align-items: center;
-        font-weight:bold;
         height:50px;
+        align-items: center;
+        font-weight:bold; 
         background-color: $background-color;
-        border-radius: 15px;
         margin-bottom:15px;
+        border-radius: 15px;
 
         &:hover{
             background-color: lighten($primary-color,32%);
-
         }
         &:hover .picto .fas {
             color:$primary-color;
         }
         .number {
            display:flex;
+           width: 20px;
+           height:20px;
            justify-content:center;
            align-items:center;
            position: relative;
            right: 10px;
-           width: 20px;
-           height:20px;
            color: white;
            border-radius:20px;
            background-color:$primary-color;
@@ -268,11 +259,10 @@ nav i{
         .picto {
             width:30px;
             .fas {
-                margin:0px;
-                padding:0px;
                 color: darken($background-color, 40%);
+                padding:0px;
+                margin:0px;    
             }
-
         }
     }
 }
@@ -287,37 +277,34 @@ nav i{
         width:100%;
         height:230px;
         background-color:white;
-        margin-bottom:20px;
         position:relative;
+        margin-bottom:20px;
     }
-
     img { 
         width:100%;
         height:74%;
     }
-
     .description{
         display:flex;
         justify-content:space-between;
         align-items: center;
         padding: 10px;
-   
+    }
 }
 
-
-}
 .favori {
-    position:relative;
-    font-size: 1.6em;
     width:30px;
     height:30px;
+    position:relative;
+    font-size: 1.6em;
+    
     & .far{
         display:inline;
         opacity:1;
         position:absolute;
         right:5px;
         bottom:5px;
-        animation: heart_aper reverse 300ms;
+        animation: heart_aper reverse 250ms;
         animation-fill-mode: forwards;
         animation-play-state: paused;  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
     }      
@@ -329,36 +316,33 @@ nav i{
         right:5px;
         bottom:5px;
         font-weight:bold;
-        animation: heart_aper 300ms;
+        animation: heart_aper 250ms;
         animation-fill-mode: forwards;
         animation-play-state: paused;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
     }
 }
-
-
 .favori:hover > .fas{
-animation-play-state: running ;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/     
+    animation-play-state: running ;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/     
 }
-.favori:hover >.far{/* change le contour noir du coeur par le dégradé
-        background: -webkit-linear-gradient($primary-color, $secondary-color);
-        background-clip: border-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        opacity:1;*/
-        animation-play-state: running ;
+.favori:hover >.far{
+    animation-play-state: running ; /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
 }
 .gradient{
-background: -webkit-linear-gradient($primary-color, $secondary-color);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient($primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 } 
+
 /*footer*/
 footer{
     height:190px;
     background-color:#353535;
     color:white;
     padding: 20px;
-    a, a:visited{
+    .container{
+        padding:0px 20px 0px 20px;
+    }
+    a, a:visited, a:checked, a:hover{
         color: white;
     }
     ul {
@@ -373,15 +357,15 @@ footer{
         padding-bottom:20px;
     }
     .fas{
-        padding-right:5px;
-        font-size: 0.9em;
         width:19px;
+        font-size: 0.9em;
+        padding-right:5px;      
     }   
 }
 
 /* pages menu*/
 
-#illustration_menu{
+.illustration_menu{
     width:100%;
     height:250px;
     img{
@@ -391,11 +375,11 @@ footer{
 }
 .menu{
     background-color: $background-color;
-    border-radius: 25px;
-    margin-top:-20px;
     z-index: 3;
     position:relative;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 15px 20px 15px;
+    margin-top:-20px;
+    border-radius: 25px 25px 0px 0px;
     &__titre{
         display: flex;
         justify-content:space-between;
@@ -406,8 +390,8 @@ footer{
     &__card{
         display: flex;
         min-width:0;
-        position: relative;
         justify-content:space-between;
+        position: relative;     
         background-color:white;
         margin-bottom:15px;
 
@@ -424,6 +408,7 @@ footer{
             animation:slide-in $anim_duration $delay*3 ease-in-out;
             animation-fill-mode: backwards;
         }
+
         i{
             transform: translateX(15px) rotate(0deg) ;
             transition: transform 1000ms;
@@ -433,17 +418,14 @@ footer{
            transition: width 400ms ease-in-out;
         }
         &:hover .menu__card__validation >i {
-            transition: transform 400ms ease-in-out;
-            transform: translateX(0px) rotate(360deg) ;
+            transform: translateX(0px) rotate(360deg);
+            transition: transform 400ms ease-in-out;         
         }
         
        &__visible{ 
             display:flex;
             width:100%;
             min-width:0;
-           /* &:hover + .menu__card__validation{ 
-                transform: translateX(0px);
-           }*/
         }
         
         &__description{
@@ -456,9 +438,6 @@ footer{
                 white-space: nowrap;
                 overflow:hidden;
             }
-            /*&:hover + .anime{
-                transform:translateX(-45px)
-            }    */
         }  
 
         &__prix{  
@@ -466,9 +445,6 @@ footer{
             align-items:flex-end;
             padding:10px;
             font-weight:bold;
-           /* &:hover + .menu__card__validation{ 
-                transform: translateX(0px)
-            } */
         }
 
         &__validation{
@@ -485,6 +461,10 @@ footer{
             transition: transform 1000ms;*/
             /*animations!*/  
         }  
+    }
+
+    h1 {
+        font-weight:normal;
     }
 
     h2{
@@ -505,31 +485,25 @@ footer{
 
 /*------------ régles pour les grands écrans ------------*/
 
-@media screen and (min-width:750px)
-{
-/*.version__desktop{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    .entete{
-        width:45%;
-        padding: 30px 0px 20px 0px;
+@media screen and (min-width:750px){
+    .illustration_menu{
+        width:100%;
+        height:50vh;
+        max-height:400px;
+        img{
+            width:100%;
+            height:100%;
+        }
     }
-    #fonctionnement{
-        width:45%;
-        padding-right:0px;
-    }
-}*/
-
     #fonctionnement .liste {
         display: flex;
         justify-content: space-around;
-            .etape {
-            width: 30%;
-            }
+        .etape {
+        width: 30%;
+        }
     }
     .restaurant {
-        .gallerie{
+            .gallerie{
             flex-direction:row;
             flex-wrap: wrap;
             justify-content: space-around;

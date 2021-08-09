@@ -1,5 +1,7 @@
 @charset "UTF-8";
 /*variables*/
+/* couleurs*/
+/*animations*/
 /*valeurs de bases*/
 * {
   box-sizing: border-box;
@@ -9,9 +11,9 @@
 
 /*loader*/
 .blank {
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -30,8 +32,8 @@
   border: solid 7px #e4d5f6;
   border-top: solid 7px #9356DC;
   border-radius: 50%;
-  animation: rotation linear 5 1s;
   z-index: 2;
+  animation: rotation linear 5 1s;
 }
 
 /*animations*/
@@ -80,7 +82,6 @@
 body {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
-  /*font-family: 'Shrikhand', cursive;*/
 }
 body a, body a:hover, body a:visited, body a:checked {
   text-decoration: none;
@@ -88,7 +89,7 @@ body a, body a:hover, body a:visited, body a:checked {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -119,15 +120,18 @@ body a, body a:hover, body a:visited, body a:checked {
 /*boutons*/
 .button {
   display: flex;
+  width: 180px;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  padding: 10px 0px 10px 0px;
-  margin: auto;
   font-size: 0.95em;
   color: white;
   background: linear-gradient(#ff79da, #9356DC);
+  padding: 15px 0px 15px 0px;
+  margin: auto;
   border-radius: 30px;
+}
+.button__commander {
+  width: 140px;
 }
 .button:hover {
   cursor: pointer;
@@ -136,11 +140,11 @@ body a, body a:hover, body a:visited, body a:checked {
 }
 
 .button_nouveau {
-  background-color: #99e2d0;
-  color: #278870;
+  text-align: center;
   font-size: 0.8em;
   font-weight: bold;
-  text-align: center;
+  color: #278870;
+  background-color: #99e2d0;
   position: absolute;
   top: 20px;
   right: 10px;
@@ -149,10 +153,10 @@ body a, body a:hover, body a:visited, body a:checked {
 
 .label {
   display: inline-block;
-  vertical-align: middle;
-  text-align: center;
   height: 45px;
   width: 40px;
+  vertical-align: middle;
+  text-align: center;
   margin: auto;
   border-radius: 15px 0px 0px 15px;
 }
@@ -167,7 +171,6 @@ body a, body a:hover, body a:visited, body a:checked {
   border: none;
 }
 .input:focus {
-  /*border: solid 2px $primary-color;*/
   background-color: white;
   outline: none;
 }
@@ -176,18 +179,14 @@ body a, body a:hover, body a:visited, body a:checked {
 }
 
 /*titres et paragraphes*/
-h1 {
-  padding-bottom: 15px;
-}
-
-h2 {
+h1, h2 {
   padding-bottom: 15px;
 }
 
 /*header*/
 header, nav {
-  padding: 15px 15px 10px 15px;
   text-align: center;
+  padding: 15px 15px 10px 15px;
   position: relative;
 }
 
@@ -196,8 +195,9 @@ header img, nav img {
 }
 
 nav i {
+  font-size: 1.5em;
   position: absolute;
-  top: 25px;
+  top: 20px;
   left: 15px;
 }
 
@@ -234,12 +234,12 @@ nav i {
 }
 #fonctionnement .etape {
   display: flex;
+  height: 50px;
   align-items: center;
   font-weight: bold;
-  height: 50px;
   background-color: #f6f6f6;
-  border-radius: 15px;
   margin-bottom: 15px;
+  border-radius: 15px;
 }
 #fonctionnement .etape:hover {
   background-color: #e9ddf8;
@@ -249,12 +249,12 @@ nav i {
 }
 #fonctionnement .etape .number {
   display: flex;
+  width: 20px;
+  height: 20px;
   justify-content: center;
   align-items: center;
   position: relative;
   right: 10px;
-  width: 20px;
-  height: 20px;
   color: white;
   border-radius: 20px;
   background-color: #9356DC;
@@ -263,9 +263,9 @@ nav i {
   width: 30px;
 }
 #fonctionnement .etape .picto .fas {
-  margin: 0px;
-  padding: 0px;
   color: #909090;
+  padding: 0px;
+  margin: 0px;
 }
 
 /*accueil : section 3 - Liste des restaurants*/
@@ -280,8 +280,8 @@ nav i {
   width: 100%;
   height: 230px;
   background-color: white;
-  margin-bottom: 20px;
   position: relative;
+  margin-bottom: 20px;
 }
 .restaurant img {
   width: 100%;
@@ -295,10 +295,10 @@ nav i {
 }
 
 .favori {
-  position: relative;
-  font-size: 1.6em;
   width: 30px;
   height: 30px;
+  position: relative;
+  font-size: 1.6em;
 }
 .favori .far {
   display: inline;
@@ -306,7 +306,7 @@ nav i {
   position: absolute;
   right: 5px;
   bottom: 5px;
-  animation: heart_aper reverse 300ms;
+  animation: heart_aper reverse 250ms;
   animation-fill-mode: forwards;
   animation-play-state: paused;
   /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
@@ -318,25 +318,20 @@ nav i {
   right: 5px;
   bottom: 5px;
   font-weight: bold;
-  animation: heart_aper 300ms;
+  animation: heart_aper 250ms;
   animation-fill-mode: forwards;
   animation-play-state: paused;
   /*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
 }
 
-.favori:hover  .fas {
+.favori:hover > .fas {
   animation-play-state: running;
   /*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
 }
 
-.favori:hover  .far {
-  /* change le contour noir du coeur par le dégradé
-  background: -webkit-linear-gradient($primary-color, $secondary-color);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity:1;*/
+.favori:hover > .far {
   animation-play-state: running;
+  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
 }
 
 .gradient {
@@ -352,7 +347,10 @@ footer {
   color: white;
   padding: 20px;
 }
-footer a, footer a:visited {
+footer .container {
+  padding: 0px 20px 0px 20px;
+}
+footer a, footer a:visited, footer a:checked, footer a:hover {
   color: white;
 }
 footer ul {
@@ -367,28 +365,28 @@ footer h3 {
   padding-bottom: 20px;
 }
 footer .fas {
-  padding-right: 5px;
-  font-size: 0.9em;
   width: 19px;
+  font-size: 0.9em;
+  padding-right: 5px;
 }
 
 /* pages menu*/
-#illustration_menu {
+.illustration_menu {
   width: 100%;
   height: 250px;
 }
-#illustration_menu img {
+.illustration_menu img {
   width: 100%;
   height: 100%;
 }
 
 .menu {
   background-color: #f6f6f6;
-  border-radius: 25px;
-  margin-top: -20px;
   z-index: 3;
   position: relative;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 15px 20px 15px;
+  margin-top: -20px;
+  border-radius: 25px 25px 0px 0px;
 }
 .menu__titre {
   display: flex;
@@ -400,8 +398,8 @@ footer .fas {
 .menu__card {
   display: flex;
   min-width: 0;
-  position: relative;
   justify-content: space-between;
+  position: relative;
   background-color: white;
   margin-bottom: 15px;
   /*animation*/
@@ -427,24 +425,18 @@ footer .fas {
   transition: width 400ms ease-in-out;
 }
 .menu__card:hover .menu__card__validation > i {
-  transition: transform 400ms ease-in-out;
   transform: translateX(0px) rotate(360deg);
+  transition: transform 400ms ease-in-out;
 }
 .menu__card__visible {
   display: flex;
   width: 100%;
   min-width: 0;
-  /* &:hover + .menu__card__validation{ 
-       transform: translateX(0px);
-  }*/
 }
 .menu__card__description {
   flex: 2;
   min-width: 0;
   padding: 10px;
-  /*&:hover + .anime{
-      transform:translateX(-45px)
-  }    */
 }
 .menu__card__description p, .menu__card__description h3 {
   text-overflow: ellipsis;
@@ -456,9 +448,6 @@ footer .fas {
   align-items: flex-end;
   padding: 10px;
   font-weight: bold;
-  /* &:hover + .menu__card__validation{ 
-       transform: translateX(0px)
-   } */
 }
 .menu__card__validation {
   display: flex;
@@ -473,6 +462,9 @@ footer .fas {
   /* transform: translateX(45px);  /*point de depart
    transition: transform 1000ms;*/
   /*animations!*/
+}
+.menu h1 {
+  font-weight: normal;
 }
 .menu h2 {
   text-transform: uppercase;
@@ -492,19 +484,16 @@ footer .fas {
 
 /*------------ régles pour les grands écrans ------------*/
 @media screen and (min-width: 750px) {
-  /*.version__desktop{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      .entete{
-          width:45%;
-          padding: 30px 0px 20px 0px;
-      }
-      #fonctionnement{
-          width:45%;
-          padding-right:0px;
-      }
-  }*/
+  .illustration_menu {
+    width: 100%;
+    height: 50vh;
+    max-height: 400px;
+  }
+  .illustration_menu img {
+    width: 100%;
+    height: 100%;
+  }
+
   #fonctionnement .liste {
     display: flex;
     justify-content: space-around;
