@@ -1,0 +1,49 @@
+
+/*--------------------animations--------------*/
+
+/*Slide in sur l'axe Y*/
+@keyframes slide-in {
+    0%{ 
+        transform: translateY(20px);
+        opacity:0;
+    }
+    100%{ 
+        transform : translateY(0);
+        opacity:1;
+    }
+}
+/*rotation simple 360 degrés*/
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/*disparition sur la toute fin de l'animation*/
+@keyframes desapearing{
+    0%{
+        opacity:100%;
+    }
+    95%{
+        opacity:100%;
+    }
+    99%{
+        opacity:0%;
+        height:100%
+    }
+   100% {
+        opacity :0%;
+        height:0;
+    }
+}
+/*apparition sur toute la durée de l'animation*/
+@keyframes heart_aper{
+    0%{ 
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
