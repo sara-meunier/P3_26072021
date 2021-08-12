@@ -1,0 +1,134 @@
+/*----------------------loader-----------------------*/
+
+/*background lors du loading*/
+.blank{
+    display:flex;
+    width: 100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+    position: fixed;
+    background-color:white;
+    z-index:1;
+    &__animation{ 
+        animation: desapearing 2s;
+        animation-fill-mode: both;
+    }
+}
+/*loader circulaire*/
+.loader{
+    display:inline-block;
+    width: 80px;
+    height:80px;
+    border: solid 7px lighten($primary-color,30%);
+    border-top: solid 7px $primary-color;
+    border-radius: 50%;
+    z-index:2;
+    animation: rotation linear 5 1s;   
+}
+
+/*-------------------formulaire----------------------*/
+.label{
+    display: inline-block;
+    height:45px;
+    width:40px;
+    vertical-align:middle;
+    text-align:center;
+    margin:auto;
+    border-radius : 15px 0px 0px 15px; 
+}
+.input{
+    font-family: 'Roboto', sans-serif;
+    font-weight:bold;
+    color:black;
+    background-color:transparent;
+    padding: 5px 0px 5px 10px;
+    margin: 0px;
+    border: none; 
+    &:focus{
+        color:darken($background-color,10%);
+        background-color: white;
+        outline: none;
+    }
+    &::placeholder{
+        opacity:1;
+    }
+}
+
+/*---------------------boutons-----------------------*/
+
+.button{
+    display: flex;
+    width: 180px;
+    justify-content:center;
+    align-items:center;
+    font-size:0.95em;
+    color: white;
+    background: linear-gradient($secondary-color,$primary-color);
+    padding: 15px 0px 15px 0px;
+    margin:auto;
+    border-radius: 30px;
+    &__commander{
+        width: 140px;
+    }
+    &:hover{
+        cursor:pointer;
+        background:linear-gradient(lighten($secondary-color, 3%), lighten($primary-color,3%));
+        box-shadow:1px 5px 10px darken($background-color, 40%);
+    }
+}
+
+/*boutons pour les nouveauté sur la page d'accueil*/
+.button_nouveau{
+    text-align:center;
+    font-size:0.8em;
+    font-weight:bold;
+    color:darken($tertiary-color,40%);
+    background-color:$tertiary-color;   
+    position:absolute;
+    top:20px;
+    right:10px;
+    padding:5px 8px 5px 8px;
+}
+
+/*--------------------favoris------------------------*/
+.favori {
+    width:30px;
+    height:30px;
+    position:relative;
+    font-size: 1.6em;
+    
+    & .far{
+        display:inline;
+        opacity:1;
+        position:absolute;
+        right:5px;
+        bottom:5px;
+        animation: heart_aper reverse 250ms;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;  /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
+    }      
+    
+    & .fas{
+        display:inline;
+        opacity:0;
+        position:absolute;
+        right:5px;
+        bottom:5px;
+        font-weight:bold;
+        animation: heart_aper 250ms;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/
+    }
+}
+.favori:hover > .fas{
+    animation-play-state: running ;/*ceci permet au coeur de rester rempli aprés que la souri soit retirée*/     
+}
+.favori:hover >.far{
+    animation-play-state: running ; /*ceci permet au contour noir de rester à opacité 0 aprés que la souri soit retirée*/
+}
+.gradient{
+    background: -webkit-linear-gradient($primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 

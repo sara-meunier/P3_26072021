@@ -1,0 +1,47 @@
+/*--------------header---------------*/
+
+header, nav{
+    text-align: center;
+    padding : 15px 15px 10px 15px;
+    position: relative;
+    box-shadow:0px 6px 4px -3px #3d39392c;
+}
+header img, nav img{
+    width:170px; 
+}
+nav i{
+    font-size:1.5em;
+    position:absolute;
+    top:20px;
+    left:15px;
+}
+
+/*---------------footer--------------*/
+footer{
+    height:190px;
+    background-color:#353535;
+    color:white;
+    padding: 20px;
+    .container{
+        padding:0px 20px 0px 20px;
+    }
+    a, a:visited, a:checked, a:hover{
+        color: white;
+    }
+    ul {
+        list-style:none;      
+        li {
+            padding:0px 0px 10px 0px;          
+        }
+    }
+    h3{
+        font-family:'Shrikhand', cursive;
+        font-weight:normal;
+        padding-bottom:20px;
+    }
+    .fas{
+        width:19px;
+        font-size: 0.9em;
+        padding-right:5px;      
+    }   
+}
